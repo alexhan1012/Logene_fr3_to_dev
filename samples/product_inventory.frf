@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TfrxReport>
+  <ReportOptions Author="" CreateDate="2024-01-01" Description="Product Inventory" Name="ProductInventory" Version="3"/>
+  <TfrxPageDesigner Name="Page1" PaperWidth="1169" PaperHeight="827" LeftMargin="30" RightMargin="30" TopMargin="30" BottomMargin="30" Orientation="1">
+    <TfrxReportTitle Name="Title1" Height="40" Top="0">
+      <TfrxMemoView Name="mTitle" Left="0" Top="5" Width="1109" Height="30"
+        Text="Product Inventory Report"
+        Font.Name="Arial" Font.Size="14" Font.Style="[fsBold]"
+        HAlign="haCenter" VAlign="vaCenter"/>
+    </TfrxReportTitle>
+
+    <TfrxGroupHeader Name="GrpHeader1" Height="22" DataSet="dsProducts" Condition="dsProducts.Category">
+      <TfrxMemoView Name="grpCat" Left="0" Top="2" Width="300" Height="18"
+        Text="" DataSet="dsProducts" DataField="Category"
+        Font.Name="Arial" Font.Size="10" Font.Style="[fsBold]"
+        HAlign="haLeft" VAlign="vaTop" Color="255"/>
+    </TfrxGroupHeader>
+
+    <TfrxMasterData Name="Detail1" Height="20" DataSet="dsProducts">
+      <TfrxMemoView Name="fCode"  Left="0"   Top="1" Width="120" Height="18"
+        Text="" DataSet="dsProducts" DataField="ProductCode"
+        Font.Name="Arial" Font.Size="9" HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="fName"  Left="130" Top="1" Width="250" Height="18"
+        Text="" DataSet="dsProducts" DataField="ProductName"
+        Font.Name="Arial" Font.Size="9" HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="fQty"   Left="390" Top="1" Width="100" Height="18"
+        Text="" DataSet="dsProducts" DataField="Quantity"
+        Font.Name="Arial" Font.Size="9" HAlign="haRight" VAlign="vaTop"/>
+      <TfrxMemoView Name="fPrice" Left="500" Top="1" Width="120" Height="18"
+        Text="" DataSet="dsProducts" DataField="UnitPrice"
+        Font.Name="Arial" Font.Size="9" HAlign="haRight" VAlign="vaTop"/>
+      <TfrxCheckBox Name="chkActive" Left="630" Top="2" Width="80" Height="16"
+        DataSet="dsProducts" DataField="IsActive"/>
+    </TfrxMasterData>
+
+    <TfrxGroupFooter Name="GrpFooter1" Height="22">
+      <TfrxLine Name="grpLine" Left="0" Top="0" Width="1109" Height="2"/>
+    </TfrxGroupFooter>
+
+    <TfrxPageFooter Name="Footer1" Height="20">
+      <TfrxMemoView Name="fPage" Left="0" Top="2" Width="1109" Height="16"
+        Text="Page [Page#] of [TotalPages#]"
+        Font.Name="Arial" Font.Size="8" HAlign="haCenter" VAlign="vaTop"/>
+    </TfrxPageFooter>
+  </TfrxPageDesigner>
+</TfrxReport>
