@@ -1,0 +1,29 @@
+{
+  "name": "logene_fr3_to_dev",
+  "version": "1.0.0",
+  "description": "FastReport (.fr3/.frf) to DevExpress (.repx) converter – Electron desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "jest --testPathPattern=tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexhan1012/Logene_fr3_to_dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alexhan1012/Logene_fr3_to_dev/issues"
+  },
+  "homepage": "https://github.com/alexhan1012/Logene_fr3_to_dev#readme",
+  "dependencies": {
+    "electron": "29.4.6",
+    "xml2js": "0.6.2"
+  },
+  "devDependencies": {
+    "jest": "29.7.0"
+  }
+}

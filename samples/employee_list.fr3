@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TfrxReport>
+  <ReportOptions Author="" CreateDate="2024-01-01" Description="Employee List" Name="EmployeeList" Version="3"/>
+  <TfrxPageDesigner Name="Page1" PaperWidth="793" PaperHeight="1123" LeftMargin="30" RightMargin="30" TopMargin="30" BottomMargin="30" Orientation="0">
+    <TfrxReportTitle Name="Title1" Height="45" Top="0">
+      <TfrxMemoView Name="mTitle" Left="0" Top="5" Width="733" Height="35"
+        Text="Employee Directory"
+        Font.Name="Times New Roman" Font.Size="18" Font.Style="[fsBold,fsItalic]"
+        HAlign="haCenter" VAlign="vaCenter"
+        Color="0" FillColor="-1"/>
+    </TfrxReportTitle>
+
+    <TfrxPageHeader Name="Header1" Height="25" Top="45">
+      <TfrxMemoView Name="hID"    Left="0"   Top="3" Width="80"  Height="18" Text="ID"
+        Font.Name="Arial" Font.Size="8" Font.Style="[fsBold]" HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="hFirst" Left="85"  Top="3" Width="150" Height="18" Text="First Name"
+        Font.Name="Arial" Font.Size="8" Font.Style="[fsBold]" HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="hLast"  Left="240" Top="3" Width="150" Height="18" Text="Last Name"
+        Font.Name="Arial" Font.Size="8" Font.Style="[fsBold]" HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="hDept"  Left="395" Top="3" Width="150" Height="18" Text="Department"
+        Font.Name="Arial" Font.Size="8" Font.Style="[fsBold]" HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="hSal"   Left="550" Top="3" Width="100" Height="18" Text="Salary"
+        Font.Name="Arial" Font.Size="8" Font.Style="[fsBold]" HAlign="haRight" VAlign="vaTop"/>
+      <TfrxLine Name="hLine" Left="0" Top="22" Width="733" Height="2"/>
+    </TfrxPageHeader>
+
+    <TfrxMasterData Name="Detail1" Height="20" DataSet="dsEmployee">
+      <TfrxMemoView Name="fID"    Left="0"   Top="1" Width="80"  Height="18"
+        Text="" DataSet="dsEmployee" DataField="EmployeeID"
+        Font.Name="Arial" Font.Size="9" HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="fFirst" Left="85"  Top="1" Width="150" Height="18"
+        Text="" DataSet="dsEmployee" DataField="FirstName"
+        Font.Name="Arial" Font.Size="9" HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="fLast"  Left="240" Top="1" Width="150" Height="18"
+        Text="" DataSet="dsEmployee" DataField="LastName"
+        Font.Name="Arial" Font.Size="9" HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="fDept"  Left="395" Top="1" Width="150" Height="18"
+        Text="" DataSet="dsEmployee" DataField="Department"
+        Font.Name="Arial" Font.Size="9" HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="fSal"   Left="550" Top="1" Width="100" Height="18"
+        Text="" DataSet="dsEmployee" DataField="Salary"
+        Font.Name="Arial" Font.Size="9" HAlign="haRight" VAlign="vaTop"/>
+    </TfrxMasterData>
+
+    <TfrxPageFooter Name="Footer1" Height="20">
+      <TfrxMemoView Name="fPage" Left="0" Top="2" Width="733" Height="16"
+        Text="Page [Page#]"
+        Font.Name="Arial" Font.Size="8"
+        HAlign="haRight" VAlign="vaTop"/>
+    </TfrxPageFooter>
+  </TfrxPageDesigner>
+</TfrxReport>

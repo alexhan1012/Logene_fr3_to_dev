@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline';" />
+  <title>FastReport → DevExpress Converter</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 14px;
+      background: #f0f2f5;
+      color: #333;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #1a73e8;
+      color: #fff;
+      padding: 14px 24px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: .3px;
+      user-select: none;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      background: #fff;
+      border-bottom: 1px solid #dde1e7;
+      flex-wrap: wrap;
+    }
+
+    .toolbar button {
+      padding: 7px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background .15s;
+    }
+
+    #btnOpen  { background: #1a73e8; color: #fff; }
+    #btnOpen:hover  { background: #1558b0; }
+    #btnConvert { background: #34a853; color: #fff; }
+    #btnConvert:hover { background: #277d3e; }
+    #btnConvert:disabled { background: #9ab8a2; cursor: default; }
+    #btnSave { background: #f9ab00; color: #fff; }
+    #btnSave:hover { background: #c98a00; }
+    #btnSave:disabled { background: #d4c590; cursor: default; }
+
+    .file-info {
+      font-size: 13px;
+      color: #555;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .panes {
+      display: flex;
+      flex: 1;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .pane {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-right: 1px solid #dde1e7;
+    }
+
+    .pane:last-child { border-right: none; }
+
+    .pane-header {
+      background: #e8eaed;
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #444;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    textarea {
+      flex: 1;
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      padding: 12px 16px;
+      border: none;
+      resize: none;
+      outline: none;
+      background: #fff;
+      color: #222;
+      tab-size: 2;
+      overflow: auto;
+    }
+
+    textarea:read-only { background: #fafafa; }
+
+    .status-bar {
+      background: #fff;
+      border-top: 1px solid #dde1e7;
+      padding: 6px 24px;
+      font-size: 12px;
+      color: #666;
+      user-select: none;
+    }
+
+    .status-bar.error { color: #c62828; }
+    .status-bar.success { color: #2e7d32; }
+  </style>
+</head>
+<body>
+  <header>FastReport (.fr3 / .frf) → DevExpress (.repx) 转换工具</header>
+
+  <div class="toolbar">
+    <button id="btnOpen">📂 打开文件</button>
+    <button id="btnConvert" disabled>⚙️ 转换</button>
+    <button id="btnSave" disabled>💾 保存 .repx</button>
+    <span class="file-info" id="fileInfo">未选择文件</span>
+  </div>
+
+  <div class="panes">
+    <div class="pane">
+      <div class="pane-header">源文件 (FastReport XML)</div>
+      <textarea id="srcArea" readonly placeholder="打开 .fr3 / .frf 文件后，其内容将显示在此处…"></textarea>
+    </div>
+    <div class="pane">
+      <div class="pane-header">输出文件 (DevExpress REPX XML)</div>
+      <textarea id="outArea" readonly placeholder="点击「转换」后，生成的 DevExpress REPX 内容将显示在此处…"></textarea>
+    </div>
+  </div>
+
+  <div class="status-bar" id="statusBar">就绪</div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TfrxReport>
+  <ReportOptions Author="" CreateDate="2024-01-01" Description="Customer Sales Report" LastChange="2024-01-01" Name="CustomerSalesReport" Version="3"/>
+  <TfrxPageDesigner Name="Page1" PaperWidth="827" PaperHeight="1169" LeftMargin="31" RightMargin="31" TopMargin="31" BottomMargin="31" Orientation="0">
+    <TfrxReportTitle Name="ReportTitle1" Height="50" Top="0">
+      <TfrxMemoView Name="lblTitle" Left="0" Top="10" Width="765" Height="30"
+        Text="Customer Sales Report"
+        Font.Name="Arial" Font.Size="16" Font.Style="[fsBold]"
+        HAlign="haCenter" VAlign="vaCenter"
+        Color="0" FillColor="-1"/>
+    </TfrxReportTitle>
+
+    <TfrxPageHeader Name="PageHeader1" Height="30" Top="50">
+      <TfrxMemoView Name="lblCustNo" Left="0" Top="5" Width="100" Height="20"
+        Text="Customer No" Font.Name="Arial" Font.Size="9" Font.Style="[fsBold]"
+        HAlign="haLeft" VAlign="vaTop" Color="0" FillColor="-1"/>
+      <TfrxMemoView Name="lblName" Left="110" Top="5" Width="200" Height="20"
+        Text="Customer Name" Font.Name="Arial" Font.Size="9" Font.Style="[fsBold]"
+        HAlign="haLeft" VAlign="vaTop" Color="0" FillColor="-1"/>
+      <TfrxMemoView Name="lblAmount" Left="320" Top="5" Width="120" Height="20"
+        Text="Amount" Font.Name="Arial" Font.Size="9" Font.Style="[fsBold]"
+        HAlign="haRight" VAlign="vaTop" Color="0" FillColor="-1"/>
+      <TfrxMemoView Name="lblDate" Left="450" Top="5" Width="150" Height="20"
+        Text="Date" Font.Name="Arial" Font.Size="9" Font.Style="[fsBold]"
+        HAlign="haLeft" VAlign="vaTop" Color="0" FillColor="-1"/>
+      <TfrxLine Name="hdrLine" Left="0" Top="25" Width="765" Height="2"/>
+    </TfrxPageHeader>
+
+    <TfrxMasterData Name="MasterData1" Height="20" DataSet="qrySales">
+      <TfrxMemoView Name="fldCustNo" Left="0" Top="0" Width="100" Height="20"
+        Text="" DataSet="qrySales" DataField="CustomerNo"
+        Font.Name="Arial" Font.Size="9"
+        HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="fldName" Left="110" Top="0" Width="200" Height="20"
+        Text="" DataSet="qrySales" DataField="CustomerName"
+        Font.Name="Arial" Font.Size="9"
+        HAlign="haLeft" VAlign="vaTop"/>
+      <TfrxMemoView Name="fldAmount" Left="320" Top="0" Width="120" Height="20"
+        Text="" DataSet="qrySales" DataField="SaleAmount"
+        Font.Name="Arial" Font.Size="9"
+        HAlign="haRight" VAlign="vaTop"/>
+      <TfrxMemoView Name="fldDate" Left="450" Top="0" Width="150" Height="20"
+        Text="" DataSet="qrySales" DataField="SaleDate"
+        Font.Name="Arial" Font.Size="9"
+        HAlign="haLeft" VAlign="vaTop"/>
+    </TfrxMasterData>
+
+    <TfrxReportSummary Name="ReportSummary1" Height="30">
+      <TfrxMemoView Name="lblTotal" Left="220" Top="5" Width="90" Height="20"
+        Text="Total:" Font.Name="Arial" Font.Size="9" Font.Style="[fsBold]"
+        HAlign="haRight" VAlign="vaTop"/>
+      <TfrxMemoView Name="fldTotal" Left="320" Top="5" Width="120" Height="20"
+        Text="" DataSet="qrySales" DataField="TotalAmount"
+        Font.Name="Arial" Font.Size="9" Font.Style="[fsBold]"
+        HAlign="haRight" VAlign="vaTop"/>
+    </TfrxReportSummary>
+
+    <TfrxPageFooter Name="PageFooter1" Height="25">
+      <TfrxMemoView Name="lblPage" Left="0" Top="3" Width="765" Height="18"
+        Text="Page [Page#] of [TotalPages#]"
+        Font.Name="Arial" Font.Size="8"
+        HAlign="haCenter" VAlign="vaTop"/>
+    </TfrxPageFooter>
+  </TfrxPageDesigner>
+</TfrxReport>
